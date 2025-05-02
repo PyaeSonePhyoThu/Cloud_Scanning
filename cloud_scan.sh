@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# cloud-scan.sh - Automated port scanner for cloud services
-
 if [[ $# -lt 2 ]]; then
     echo "Usage: $0 <target-ip-or-hostname> <service-type>"
     echo "Available service types: ec2, rds, k8s, docker, storage, lb, vpn, monitoring, marketplace, full"
@@ -11,7 +9,6 @@ fi
 TARGET=$1
 SERVICE=$2
 
-# Define port sets
 declare -A PORTS
 PORTS[ec2]="22,80,443,8080,8443,3306,5432,27017,3389"
 PORTS[rds]="3306,33060,5432,27017,1433,1521"
